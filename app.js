@@ -3,6 +3,8 @@ const app = express();
 const route = require('./route/route');
 const connectToMongoDB = require('./connectDB');
 
+const bodyParser = require('body-parser')
+
 app.use((req, res, next)=>{
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
@@ -11,11 +13,11 @@ app.use((req, res, next)=>{
 })
 
 // convert json to javascript object and put into request body
-app.use(express.json());
+app.use(bodyParser.json());
 
 //middleware and static files
 app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // use route
 app.use(route); 
