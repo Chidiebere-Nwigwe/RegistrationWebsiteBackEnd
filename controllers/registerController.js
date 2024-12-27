@@ -13,7 +13,8 @@ const GetDetails = (req, res) =>{
     register.save()
         .then(() => {
             // Redirect with data as URL parameters
-            res.redirect(`http://127.0.0.1:5500/success/index.html?studentNumber=${studentNumber}&fullName=${fullName}&address=${address}&status=${status}`);
+            // res.redirect(`http://127.0.0.1:5500/success/index.html?studentNumber=${studentNumber}&fullName=${fullName}&address=${address}&status=${status}`);
+            res.redirect(`https://chidiebere-nwigwe.github.io/success/index.html?studentNumber=${studentNumber}&fullName=${fullName}&address=${address}&status=${status}`)
         })
         .catch((err) => {
             console.log(err);
