@@ -5,6 +5,11 @@ const connectToMongoDB = require('./connectDB');
 
 const bodyParser = require('body-parser')
 
+const cors = require('cors');
+app.use(cors({
+    origin: 'https://chidiebere-nwigwe.github.io',
+}));
+
 app.use((req, res, next)=>{
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
